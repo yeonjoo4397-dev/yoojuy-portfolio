@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" fill="none">
+  <defs>
+    <linearGradient id="berryBody" x1="60" y1="70" x2="240" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6f93"/>
+      <stop offset="0.5" stop-color="#f94e74"/>
+      <stop offset="1" stop-color="#e0395e"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="110" y1="0" x2="190" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8fce6e"/>
+      <stop offset="0.6" stop-color="#5aa641"/>
+      <stop offset="1" stop-color="#3f8a32"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0.32" cy="0.26" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 잎 1장 (위를 향한 뾰족한 잎) -->
+    <path id="leaf" d="M0 0 C -15 -18 -9 -46 0 -60 C 9 -46 15 -18 0 0 Z"/>
+  </defs>
+
+  <!-- 몸통 -->
+  <path d="M150 52
+           C 128 36, 92 32, 66 58
+           C 28 92, 12 144, 26 198
+           C 40 254, 92 322, 150 362
+           C 208 322, 260 254, 274 198
+           C 288 144, 272 92, 234 58
+           C 208 32, 172 36, 150 52 Z"
+        fill="url(#berryBody)"/>
+
+  <!-- 광택 -->
+  <path d="M150 52
+           C 128 36, 92 32, 66 58
+           C 28 92, 12 144, 26 198
+           C 40 254, 92 322, 150 362
+           C 208 322, 260 254, 274 198
+           C 288 144, 272 92, 234 58
+           C 208 32, 172 36, 150 52 Z"
+        fill="url(#shine)"/>
+
+  <!-- 씨앗 -->
+  <g fill="#ffd96b">
+    <ellipse cx="150" cy="96"  rx="3.2" ry="6"/>
+    <ellipse cx="112" cy="122" rx="3.2" ry="6" transform="rotate(-15 112 122)"/>
+    <ellipse cx="150" cy="130" rx="3.2" ry="6" transform="rotate(8 150 130)"/>
+    <ellipse cx="188" cy="122" rx="3.2" ry="6" transform="rotate(15 188 122)"/>
+    <ellipse cx="86"  cy="152" rx="3.2" ry="6" transform="rotate(-20 86 152)"/>
+    <ellipse cx="124" cy="160" rx="3.2" ry="6" transform="rotate(-5 124 160)"/>
+    <ellipse cx="164" cy="160" rx="3.2" ry="6" transform="rotate(6 164 160)"/>
+    <ellipse cx="206" cy="152" rx="3.2" ry="6" transform="rotate(20 206 152)"/>
+    <ellipse cx="72"  cy="188" rx="3.2" ry="6" transform="rotate(-22 72 188)"/>
+    <ellipse cx="112" cy="196" rx="3.2" ry="6" transform="rotate(-8 112 196)"/>
+    <ellipse cx="150" cy="199" rx="3.2" ry="6"/>
+    <ellipse cx="188" cy="196" rx="3.2" ry="6" transform="rotate(8 188 196)"/>
+    <ellipse cx="228" cy="188" rx="3.2" ry="6" transform="rotate(22 228 188)"/>
+    <ellipse cx="90"  cy="226" rx="3.2" ry="6" transform="rotate(-18 90 226)"/>
+    <ellipse cx="130" cy="232" rx="3.2" ry="6" transform="rotate(-5 130 232)"/>
+    <ellipse cx="170" cy="232" rx="3.2" ry="6" transform="rotate(6 170 232)"/>
+    <ellipse cx="210" cy="226" rx="3.2" ry="6" transform="rotate(18 210 226)"/>
+    <ellipse cx="108" cy="262" rx="3.2" ry="6" transform="rotate(-12 108 262)"/>
+    <ellipse cx="150" cy="266" rx="3.2" ry="6"/>
+    <ellipse cx="192" cy="262" rx="3.2" ry="6" transform="rotate(12 192 262)"/>
+    <ellipse cx="128" cy="296" rx="3.2" ry="6" transform="rotate(-8 128 296)"/>
+    <ellipse cx="172" cy="296" rx="3.2" ry="6" transform="rotate(8 172 296)"/>
+    <ellipse cx="150" cy="324" rx="3.2" ry="6"/>
+  </g>
+
+  <!-- 꼭지(잎) -->
+  <g transform="translate(150 64)" fill="url(#leafGrad)">
+    <use href="#leaf" transform="rotate(-78) scale(0.85)"/>
+    <use href="#leaf" transform="rotate(-52) scale(0.95)"/>
+    <use href="#leaf" transform="rotate(-26)"/>
+    <use href="#leaf"/>
+    <use href="#leaf" transform="rotate(26)"/>
+    <use href="#leaf" transform="rotate(52) scale(0.95)"/>
+    <use href="#leaf" transform="rotate(78) scale(0.85)"/>
+  </g>
+  <!-- 줄기 -->
+  <rect x="145" y="2" width="10" height="22" rx="5" fill="#5aa641"/>
+</svg>

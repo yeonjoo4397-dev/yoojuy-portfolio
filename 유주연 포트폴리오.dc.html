@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./component.js"></script>
+    <script src="./scroll.js"></script>
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <title>유주연 포트폴리오 | UX/UI 디자이너</title>
+        <meta
+          name="description"
+          content="8년차 UX/UI 디자이너 유주연의 포트폴리오입니다. 핀테크·커머스·헬스케어 등 다양한 도메인 경험."
+        />
+        <!-- 폰트 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jua&family=Baloo+2:wght@500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+          rel="stylesheet"
+        />
+        <!-- Swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- 스타일 -->
+        <link rel="stylesheet" href="./style.css" />
+      </helmet>
+
+      <div ref="{{ setRoot }}" class="root-wrap">
+        <!-- ============================
+         NAV
+         ============================ -->
+        <nav class="nav" aria-label="메인 내비게이션">
+          <a href="#hero" class="nav-logo">🍓 유주연 디자이너</a>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+          <label for="nav-toggle" class="nav-hamburger" aria-label="메뉴">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <div class="nav-links">
+            <a href="#about" class="nav-link" style-hover="color:#FF4D8D;"
+              onclick="document.getElementById('nav-toggle').checked=false"
+              >About</a
+            >
+            <a href="#sub-projects" class="nav-link" style-hover="color:#FF4D8D;"
+              onclick="document.getElementById('nav-toggle').checked=false"
+              >Projects</a
+            >
+            <a href="#skills" class="nav-link" style-hover="color:#FF4D8D;"
+              onclick="document.getElementById('nav-toggle').checked=false"
+              >Skills</a
+            >
+            <a href="#career" class="nav-link" style-hover="color:#FF4D8D;"
+              onclick="document.getElementById('nav-toggle').checked=false"
+              >Career</a
+            >
+            <a
+              href="#contact"
+              class="nav-cta"
+              style="background:{{ accent }};"
+              style-hover="transform:translateY(-3px) scale(1.05);"
+              onclick="document.getElementById('nav-toggle').checked=false"
+              >연락하기</a
+            >
+          </div>
+        </nav>
+
+        <!-- ============================
+         HERO
+         ============================ -->
+        <section id="hero" data-screen-label="Hero" class="hero">
+          <!-- 배경 블롭 -->
+          <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+          <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+          <!-- 떠다니는 이모지 -->
+          <span class="hero-deco hero-deco-1" aria-hidden="true">🍓</span>
+          <span class="hero-deco hero-deco-2" aria-hidden="true">🍓</span>
+          <span class="hero-deco hero-deco-3" aria-hidden="true">🍓</span>
+          <span class="hero-deco hero-deco-4" aria-hidden="true">✨</span>
+          <span class="hero-deco hero-deco-5" aria-hidden="true">💕</span>
+          <!-- 메인 콘텐츠 -->
+          <div data-reveal class="hero-content">
+            <div class="hero-avatar-wrap">
+              <span class="pulse-ring pulse-ring-1" aria-hidden="true"></span>
+              <span class="pulse-ring pulse-ring-2" aria-hidden="true"></span>
+              <span class="hero-avatar" aria-hidden="true">🍓</span>
+            </div>
+            <span class="hero-badge">🍓 UX / UI DESIGNER</span>
+            <h1 class="hero-title">
+              안녕하세요,<br /><span style="color:{{ accent }};"
+                >{{ ownerName }}</span
+              >
+              입니다 🍓
+            </h1>
+            <p class="hero-desc">
+              🍓<br>
+              하나의 딸기 속 수많은 씨앗처럼,<br />수많은 경험의 씨앗들이 모여 오늘의 저라는 하나의 딸기를 만들었습니다
+            </p>
+            <div class="hero-btns">
+              <a
+                href="#projects"
+                class="btn-primary"
+                style="background:{{ accent }};"
+                style-hover="transform:translateY(-4px) scale(1.05);"
+                >프로젝트 보러가기 🍓</a
+              >
+              <a
+                href="#contact"
+                class="btn-outline"
+                style-hover="transform:translateY(-4px) scale(1.05);"
+                >연락하기</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================
+         ABOUT
+         ============================ -->
+        <section id="about" data-screen-label="About" class="about">
+          <div data-reveal class="about-grid">
+            <!-- 프로필 이미지 -->
+            <div class="about-img-wrap">
+              <div class="about-blob-bg" aria-hidden="true"></div>
+              <div class="about-img" aria-hidden="true">🍓</div>
+              <span class="about-star" aria-hidden="true">✨</span>
+            </div>
+            <!-- 소개 텍스트 + 통계 -->
+            <div>
+              <span class="about-label">About me</span>
+              <h2 class="about-title">
+                달콤한 경험을 바탕으로<br />설계하는 디자이너 🍓
+              </h2>
+              <p class="about-text">
+                작은 딸기 하나에도 셀 수 없이 많은 씨앗이 존재합니다.
+                각 씨앗은 저마다의 가능성을 품고 자라나며, 하나의 딸기를 완성합니다.
+                저 역시 8년 동안 다양한 분야를 경험하며 수많은 씨앗들을 심어왔습니다.<br>
+                <span class="about-text-note">
+                  UX/UI 디자인부터 SI/BAS/BEMS, 실내디자인, 제품디자인 등 서로 다른 영역에서 새로운 도전과 배움을 쌓아왔습니다.
+                  프로젝트 하나하나는 새로운 배움의 과정이었고, 저를 성장시키는 소중한 경험이 되었습니다.
+                </span
+                >
+              </p>
+              <p class="about-text about-text-last">
+                그렇게 수많은 경험의 씨앗들이 모여<br> 오늘의 저라는 하나의 딸기를 만들었습니다.
+              </p>
+              <!-- 기본 정보 + 이력서 -->
+              <ul class="about-info">
+                <li class="about-info-item">
+                  <span class="about-info-icon" aria-hidden="true"><span class="svg-icon svg-icon--cake"></span></span>
+                  <span class="about-info-label">생년월일</span>
+                  <span class="about-info-value">1997.04.03</span>
+                </li>
+                <li class="about-info-item">
+                  <span class="about-info-icon" aria-hidden="true"><span class="svg-icon svg-icon--phone"></span></span>
+                  <span class="about-info-label">연락처</span>
+                  <a class="about-info-value" href="tel:010-0000-0000"
+                    >010-4337-6715</a
+                  >
+                </li>
+                <li class="about-info-item">
+                  <span class="about-info-icon" aria-hidden="true"><span class="svg-icon svg-icon--mail"></span></span>
+                  <span class="about-info-label">이메일</span>
+                  <a class="about-info-value" href="mailto:{{ email }}"
+                    >yoojuy43@gmail.com</a
+                  >
+                </li>
+                <li class="about-info-item">
+                  <span class="about-info-icon" aria-hidden="true"><span class="svg-icon svg-icon--file"></span></span>
+                  <span class="about-info-label">이력서</span>
+                  <a
+                    class="about-resume-btn"
+                    href="./resume.pdf"
+                    download
+                    style-hover="transform:translateY(-3px) scale(1.04);"
+                    >이력서 다운로드 <span aria-hidden="true">↓</span></a
+                  >
+                </li>
+              </ul>
+              <div class="about-stats">
+                <div class="stat-card">
+                  <div class="stat-num">8<span class="stat-unit">+</span></div>
+                  <div class="stat-label">YEARS</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num">400<span class="stat-unit">+</span></div>
+                  <div class="stat-label">PROJECTS</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num">5<span class="stat-unit">+</span></div>
+                  <div class="stat-label">Disciplines</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ============================
+         PROJECTS (프로젝트)
+         ============================ -->
+        <section id="sub-projects" data-screen-label="Sub Projects" class="sub-projects">
+          <div data-reveal class="sub-projects-inner">
+            <div class="sub-projects-head">
+              <span class="sub-projects-label">Main Projects </span>
+              <h2 class="sub-projects-title">가장 달콤한 딸기 🍓</h2>
+              <p class="sub-projects-hint">
+                 수많은 씨앗 중 가장 달콤하게 익어낸 결과물을 소개합니다.
+              </p>
+            </div>
+            <div class="postit-grid">
+              <sc-for list="{{ subProjects }}" as="sp" hint-placeholder-count="6">
+                <div
+                  onClick="{{ sp.open }}"
+                  class="postit-card"
+                  style="transform:rotate({{ sp.rotate }}deg);"
+                  style-hover="transform:rotate(0deg) translateY(-14px) scale(1.05);z-index:10;"
+                >
+                  <!-- 딸기 위 메모 영역 -->
+                  <div class="postit-memo">
+                    <span class="postit-thumb-icon" aria-hidden="true"><span class="svg-icon svg-icon--layout"></span></span>
+                    <h3 class="postit-title">{{ sp.title }}</h3>
+                    <p class="postit-role">{{ sp.role }}</p>
+                    <p class="postit-desc">{{ sp.summary }}</p>
+                    <div class="postit-tags">
+                      <sc-for list="{{ sp.tags }}" as="t" hint-placeholder-count="2">
+                        <span class="postit-tag">{{ t }}</span>
+                      </sc-for>
+                    </div>
+                    <div class="postit-footer">
+                      <span class="postit-category">{{ sp.category }}</span>
+                      <span class="postit-year">{{ sp.year }}</span>
+                    </div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================
+         SUB PROJECTS  (카드 클릭 → 모달)
+         ============================ -->
+        <section id="projects" data-screen-label="Projects" class="projects">
+          <span class="projects-deco-1" aria-hidden="true">🍓</span>
+          <span class="projects-deco-2" aria-hidden="true">🍓</span>
+          <div data-reveal class="projects-inner">
+            <!-- 헤더 + 슬라이드 버튼 -->
+          
+            <div class="projects-head">
+              <div>
+                <span class="projects-label">Sub Projects</span>
+                <h2 class="projects-title">딸기씨 컬렉션 🍓</h2>
+                <p class="projects-hint">
+                  하나하나의 씨앗이 모여 지금의 저를 만든 프로젝트들을 담았습니다.
+                </p>
+              </div>
+            </div>
+            <!-- 탭 메뉴 + 내비게이션 -->
+            <div class="tab-row">
+              <div class="tab-menu">
+                <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="4">
+                  <button
+                    onClick="{{ tab.click }}"
+                    class="tab-btn"
+                    style="{{ tab.style }}"
+                    style-hover="transform:translateY(-3px) scale(1.04);"
+                  >{{ tab.label }}</button>
+                </sc-for>
+              </div>
+              <div class="projects-nav">
+                <button
+                  aria-label="이전"
+                  class="btn-prev projects-btn-prev"
+                  style-hover="transform:scale(1.12);"
+                >‹</button>
+                <button
+                  aria-label="다음"
+                  class="btn-next projects-btn-next"
+                  style="background:{{ accent }};"
+                  style-hover="transform:scale(1.12);"
+                >›</button>
+              </div>
+            </div>
+            <!-- Swiper 슬라이더 -->
+            <div class="swiper projects-swiper" ref="{{ setProjectsSwiper }}">
+              <div class="swiper-wrapper">
+                <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+                  <div class="swiper-slide">
+                    <div
+                      onClick="{{ p.open }}"
+                      class="project-card"
+                      style-hover="transform:translateY(-12px) scale(1.03);box-shadow:0 26px 52px rgba(255,77,141,.28);"
+                    >
+                      <!-- 썸네일 이미지 (추후 교체 가능) -->
+                      <div class="card-thumb" style="background:{{ p.grad }};">
+                        <img
+                          class="card-thumb-img"
+                          src="{{ p.img }}"
+                          alt="{{ p.title }} 썸네일"
+                          loading="lazy"
+                        />
+                        <span class="card-category">{{ p.category }}</span>
+                      </div>
+
+                      <!-- 카드 본문 -->
+                      <div class="card-body">
+                        <div class="card-meta">
+                          <h3 class="card-title">{{ p.title }}</h3>
+                          <span class="card-year">{{ p.year }}</span>
+                        </div>
+                        <p class="card-role">{{ p.role }}</p>
+                        <p class="card-desc">{{ p.summary }}</p>
+                        <!-- 핵심 성과 -->
+                        <div class="card-kpi">
+                          <span class="card-kpi-val">{{ p.kpi.value }}</span>
+                          <span class="card-kpi-label">{{ p.kpi.label }}</span>
+                        </div>
+                        <div class="card-tags">
+                          <sc-for
+                            list="{{ p.tags }}"
+                            as="t"
+                            hint-placeholder-count="2"
+                          >
+                            <span class="card-tag">{{ t }}</span>
+                          </sc-for>
+                        </div>
+                        <div class="card-cta">
+                          자세히 보기 <span aria-hidden="true">→</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+              <div class="projects-pagination"></div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ============================
+         SKILLS
+         ============================ -->
+        <section id="skills" data-screen-label="Skills" class="skills">
+          <div data-reveal class="skills-inner">
+            <div class="skills-head">
+              <span class="skills-label">Skills &amp; Tools</span>
+              <h2 class="skills-title">새콤달콤 스킬셋 🍓</h2>
+            </div>
+            <div class="skills-grid">
+              <!-- Design -->
+              <div class="skill-group">
+                <div class="skill-group-title"><span class="svg-icon svg-icon--palette"></span> Design</div>
+                <div class="skill-tags">
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">UX 리서치</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">사용자 인터뷰</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">페르소나</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">유저 저니맵</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">정보구조(IA)</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">와이어프레임</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">프로토타이핑</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">UI 디자인</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">인터랙션 디자인</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">마이크로 인터랙션</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">디자인 시스템</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">컴포넌트 설계</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">반응형 디자인</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">접근성(A11y)</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">사용성 테스트</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">타이포그래피</span>
+                </div>
+              </div>
+              <!-- Tools -->
+              <div class="skill-group">
+                <div class="skill-group-title"><span class="svg-icon svg-icon--wrench"></span> Deisgn Tools</div>
+                <div class="skill-tags">
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Photoshop</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Illustrator</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">InDesign</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">AUTO CAD</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Inventor</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">3DMAX</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Sketchup</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Keyshot</span>
+                </div>
+                  <div class="skill-group-title skill-group-title-web"><span class="svg-icon svg-icon--wrench"></span> Web Tools</div>
+                  <div class="skill-tags">
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">HTML</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">CSS</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Figma</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Jqurey</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Notion</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Canva</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">GPT</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Gemini</span>
+                  <span class="skill-tag" style-hover="transform:translateY(-4px) scale(1.07);">Claude</span>
+                  </div>
+              </div>
+              <!-- Certifications -->
+              <div class="skill-group">
+                <div class="skill-group-title"><span class="svg-icon svg-icon--cap"></span> License</div>
+                <ul class="cert-list">
+                  <li class="cert-item" style-hover="transform:translateY(-3px) scale(1.02);">
+                    <span class="cert-name">웹디자인기능사</span>
+                    <span class="cert-meta">한국산업인력공단 · 2026.06</span>
+                  </li>
+                  <li class="cert-item" style-hover="transform:translateY(-3px) scale(1.02);">
+                    <span class="cert-name">GTQ 인디자인 1급</span>
+                    <span class="cert-meta">한국생산성본부(KPC) · 2026.02</span>
+                  </li>
+                  <li class="cert-item" style-hover="transform:translateY(-3px) scale(1.02);">
+                    <span class="cert-name">GTQ 일러스트 1급</span>
+                    <span class="cert-meta">한국생산성본부(KPC) · 2026.01</span>
+                  </li>
+                  <li class="cert-item" style-hover="transform:translateY(-3px) scale(1.02);">
+                    <span class="cert-name">컴퓨터그래픽기능사</span>
+                    <span class="cert-meta">한국산업인력공단 · 2024.12</span>
+                  </li>
+                  <li class="cert-item" style-hover="transform:translateY(-3px) scale(1.02);">
+                    <span class="cert-name">CAD 실무능력평가2급</span>
+                    <span class="cert-meta">한국생산성본부(KPC) · 2020.10</span>
+                  </li>
+                  <li class="cert-item" style-hover="transform:translateY(-3px) scale(1.02);">
+                    <span class="cert-name">GTQ 포토샵 1급</span>
+                    <span class="cert-meta">한국생산성본부(KPC) · 2016.05</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================
+         CAREER  (로드맵)
+         ============================ -->
+        <section id="career" data-screen-label="Career" class="career">
+          <span class="career-deco" aria-hidden="true">🍓</span>
+          <div data-reveal class="career-inner">
+            <div class="career-head">
+              <span class="career-label">Career</span>
+              <h2 class="career-title">차곡차곡 쌓아온 경력 🍓</h2>
+            </div>
+            <div class="roadmap">
+              <div class="roadmap-road" aria-hidden="true"></div>
+
+              <!-- 2026 : NOW -->
+              <div class="roadmap-row roadmap-row--right">
+                <div class="roadmap-node roadmap-node--now">
+                  <span class="roadmap-year-badge">2026</span>
+                  <span class="roadmap-now-pill">NOW</span>
+                </div>
+                <div class="roadmap-card">
+                  <span class="roadmap-card-period">2026.08</span>
+                  <h3 class="roadmap-card-role">UX/UI 디자이너 대리 재직 중</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 핀테크 앱 주요 기능 설계 및 디자인 시스템 운영 중
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2025 : 디자인 시스템 고도화 -->
+              <div class="roadmap-row roadmap-row--left">
+                <div
+                  class="roadmap-node roadmap-node--milestone roadmap-node--edu"
+                >
+                  <span class="roadmap-year-badge">2025</span>
+                </div>
+                <div class="roadmap-card roadmap-card--edu">
+                  <span class="roadmap-card-period">2025</span>
+                  <h3 class="roadmap-card-role">디자인 시스템 고도화</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 컴포넌트 라이브러리 v2.0 확장 및 접근성 개선
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2024 : 모바일 온보딩 리디자인 -->
+              <div class="roadmap-row roadmap-row--right">
+                <div class="roadmap-node roadmap-node--milestone">
+                  <span class="roadmap-year-badge">2024</span>
+                </div>
+                <div class="roadmap-card">
+                  <span class="roadmap-card-period">2024</span>
+                  <h3 class="roadmap-card-role">모바일 온보딩 리디자인</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 신규 가입 전환율 개선을 위한 온보딩 플로우 재설계
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2023 : B2B 대시보드 설계 -->
+              <div class="roadmap-row roadmap-row--left">
+                <div
+                  class="roadmap-node roadmap-node--milestone roadmap-node--edu"
+                >
+                  <span class="roadmap-year-badge">2023</span>
+                </div>
+                <div class="roadmap-card roadmap-card--edu">
+                  <span class="roadmap-card-period">2023</span>
+                  <h3 class="roadmap-card-role">B2B 관리자 대시보드 설계</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 내부 운영팀 대시보드 UI 설계 및 가이드 문서화
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2022 : 현재 직장 시작 -->
+              <div class="roadmap-row roadmap-row--right">
+                <div class="roadmap-node roadmap-node--milestone">
+                  <span class="roadmap-year-badge">2022</span>
+                </div>
+                <div class="roadmap-card">
+                  <span class="roadmap-card-period">2022.08 — 현재</span>
+                  <h3 class="roadmap-card-role">UX / UI 디자이너 대리 5년차</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 핀테크 앱 디자인 리드 및 디자인 시스템 운영
+                    <span class="roadmap-card-note">(회사·업무 교체)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2021 : 커머스 UX -->
+              <div class="roadmap-row roadmap-row--left">
+                <div class="roadmap-node roadmap-node--milestone">
+                  <span class="roadmap-year-badge">2021</span>
+                </div>
+                <div class="roadmap-card">
+                  <span class="roadmap-card-period">2021 — 2022</span>
+                  <h3 class="roadmap-card-role">UX/UI 디자이너</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 커머스 서비스 UX 개선 및 신규 기능 설계
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2020 : 헬스케어 앱 기능 개선 -->
+              <div class="roadmap-row roadmap-row--right">
+                <div
+                  class="roadmap-node roadmap-node--milestone roadmap-node--edu"
+                >
+                  <span class="roadmap-year-badge">2020</span>
+                </div>
+                <div class="roadmap-card roadmap-card--edu">
+                  <span class="roadmap-card-period">2020</span>
+                  <h3 class="roadmap-card-role">헬스케어 앱 기능 개선</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 환자 관리 모듈 신규 기능 UI 설계 및 사용성 테스트
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2019 : 프로덕트 디자이너 -->
+              <div class="roadmap-row roadmap-row--left">
+                <div class="roadmap-node roadmap-node--milestone">
+                  <span class="roadmap-year-badge">2019</span>
+                </div>
+                <div class="roadmap-card">
+                  <span class="roadmap-card-period">2019 — 2021</span>
+                  <h3 class="roadmap-card-role">프로덕트 디자이너</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 모바일 앱 신규 출시 및 온보딩 설계
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2018 : 인턴십 -->
+              <div class="roadmap-row roadmap-row--right">
+                <div class="roadmap-node roadmap-node--milestone">
+                  <span class="roadmap-year-badge">2018</span>
+                </div>
+                <div class="roadmap-card">
+                  <span class="roadmap-card-period">2018</span>
+                  <h3 class="roadmap-card-role">UI/UX 디자이너 인턴</h3>
+                  <p class="roadmap-card-company">
+                    ○○○ · 스타트업 서비스 리뉴얼 프로젝트 참여 및 실무 경험
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2017 : 학사 졸업 -->
+              <div class="roadmap-row roadmap-row--left">
+                <div
+                  class="roadmap-node roadmap-node--milestone roadmap-node--edu"
+                >
+                  <span class="roadmap-year-badge">2017</span>
+                </div>
+                <div class="roadmap-card roadmap-card--edu">
+                  <span class="roadmap-card-period">2017</span>
+                  <h3 class="roadmap-card-role">시각디자인 학사 졸업 <span class="svg-icon svg-icon--cap"></span></h3>
+                  <p class="roadmap-card-company">○○대학교 · 시각디자인 전공</p>
+                </div>
+              </div>
+
+              <!-- 2016 : 대학교 입학 -->
+              <div class="roadmap-row roadmap-row--right">
+                <div
+                  class="roadmap-node roadmap-node--milestone roadmap-node--edu"
+                >
+                  <span class="roadmap-year-badge">2016</span>
+                </div>
+                <div class="roadmap-card roadmap-card--edu">
+                  <span class="roadmap-card-period">2016.03 — 2017.12</span>
+                  <h3 class="roadmap-card-role">산업디자인과 중퇴 <span class="svg-icon svg-icon--cap"></span></h3>
+                  <p class="roadmap-card-company">
+                    한양여자대학교 · 산업디자인과 전공, 비즈니스사무지원과
+                    복수전공
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="career-scroll-hint" aria-hidden="true">↓</div>
+          </div>
+        </section>
+
+        <!-- ============================
+         CONTACT
+         ============================ -->
+        <section id="contact" data-screen-label="Contact" class="contact">
+          <span class="contact-deco-1" aria-hidden="true">🍓</span>
+          <span class="contact-deco-2" aria-hidden="true">🍓</span>
+          <span class="contact-deco-3" aria-hidden="true">✨</span>
+          <div data-reveal class="contact-inner">
+            <div class="contact-icon" aria-hidden="true">🍓</div>
+            <h2 class="contact-title">같이 달콤하게 일해요!</h2>
+            <p class="contact-desc">
+              새로운 프로젝트, 협업 제안 언제든 환영합니다.<br />편하게 연락
+              주세요 💕
+            </p>
+            <div class="contact-methods">
+              <a
+                href="mailto:{{ email }}"
+                class="contact-email"
+                style-hover="transform:translateY(-5px) scale(1.05);"
+                ><span class="svg-icon svg-icon--mail"></span> yoojuy43@gmail.com</a
+              >
+              <a
+                href="tel:010-0000-0000"
+                class="contact-email"
+                style-hover="transform:translateY(-5px) scale(1.05);"
+                ><span class="svg-icon svg-icon--phone"></span> 010-4337-6715</a
+              >
+              <a
+                href="./resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-pdf"
+                style-hover="transform:translateY(-5px) scale(1.05);"
+                ><span class="svg-icon svg-icon--file"></span> 이력서 PDF</a
+              >
+            </div>
+            <div class="contact-footer">
+              © 2026 유주연 · Made with 🍓 &amp; love
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================
+         MODAL  (프로젝트 상세 팝업)
+         ============================ -->
+        <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+          <div
+            onClick="{{ closeModal }}"
+            class="modal-backdrop"
+            style="animation:{{ backdropAnim }};"
+            role="dialog"
+            aria-modal="true"
+            aria-label="프로젝트 상세"
+          >
+            <div
+              onClick="{{ stop }}"
+              class="modal-box"
+              style="animation:{{ modalAnim }};"
+            >
+              <button
+                onClick="{{ closeModal }}"
+                aria-label="닫기"
+                class="modal-close"
+                style-hover="transform:rotate(90deg) scale(1.1);"
+              >
+                ✕
+              </button>
+              <div
+                class="modal-thumb"
+                style="background:{{ activeProject.grad }};"
+              >
+                <div class="swiper modal-thumb-swiper" ref="{{ setModalSwiper }}">
+                  <div class="swiper-wrapper">
+                    <sc-for
+                      list="{{ activeProject.images }}"
+                      as="imgSrc"
+                      hint-placeholder-count="3"
+                    >
+                      <div class="swiper-slide">
+                        <img
+                          class="modal-thumb-img"
+                          src="{{ imgSrc }}"
+                          alt="{{ activeProject.title }} 이미지"
+                        />
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div class="modal-thumb-pagination"></div>
+                  <button
+                    aria-label="이전 이미지"
+                    class="btn-prev modal-thumb-prev"
+                    style-hover="transform:translateY(-50%) scale(1.12);"
+                  >‹</button>
+                  <button
+                    aria-label="다음 이미지"
+                    class="btn-next modal-thumb-next"
+                    style="background:{{ accent }};"
+                    style-hover="transform:translateY(-50%) scale(1.12);"
+                  >›</button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <span class="modal-badge"
+                  >{{ activeProject.category }} · {{ activeProject.year }}</span
+                >
+                <h2 class="modal-title">{{ activeProject.title }}</h2>
+                <p class="modal-role">{{ activeProject.role }}</p>
+                <p class="modal-desc">{{ activeProject.summary }}</p>
+                <div class="modal-problem">
+                  <div class="modal-section-title">🍓 문제 정의</div>
+                  <p class="modal-problem-text">{{ activeProject.problem }}</p>
+                </div>
+                <div class="modal-approach-title"><span class="svg-icon svg-icon--sprout"></span> 접근 방식</div>
+                <div class="modal-approach-list">
+                  <sc-for
+                    list="{{ activeProject.approach }}"
+                    as="step"
+                    hint-placeholder-count="3"
+                  >
+                    <div class="modal-approach-item">
+                      <span class="modal-approach-icon" aria-hidden="true"
+                        >🍓</span
+                      ><span>{{ step }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div class="modal-results-title">✨ 결과</div>
+                <div class="modal-results">
+                  <sc-for
+                    list="{{ activeProject.results }}"
+                    as="r"
+                    hint-placeholder-count="3"
+                  >
+                    <div class="result-card">
+                      <div class="result-value">{{ r.value }}</div>
+                      <div class="result-label">{{ r.label }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div class="modal-tags">
+                  <sc-for
+                    list="{{ activeProject.tags }}"
+                    as="t"
+                    hint-placeholder-count="3"
+                  >
+                    <span class="modal-tag">#{{ t }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ============================
+         CURSOR  (마우스 따라다니는 요소)
+         ============================ -->
+        <div
+          data-follower
+          ref="{{ setFollower }}"
+          class="cursor-follower"
+          aria-hidden="true"
+        >
+          🍓
+        </div>
+   
+    </x-dc>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ============================
+     DC 컴포넌트 스크립트
+     ============================ -->
+    <script
+      type="text/x-dc"
+      data-dc-script
+      data-props='{"primaryColor":{"editor":"color","default":"#FF4D8D"},"ownerName":{"editor":"text","default":"유주연"},"role":{"editor":"text","default":"UX/UI 디자이너"},"tagline":{"editor":"text","default":"UI/UX 디자인 경험을 갖춘 8년차 디자이너"},"email":{"editor":"text","default":"hello@yujuyeon.design"}}'
+    >
+      const Component = window.__buildComponent(DCLogic);
+    </script>
+  </body>
+</html>
