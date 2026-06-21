@@ -179,13 +179,15 @@ a {
     overflow: hidden;
   }
 
-  /* 수직 패딩을 줄여 콘텐츠가 100vh 안에 들어오도록 */
+  /* 수직 패딩을 줄여 콘텐츠가 100vh 안에 들어오도록.
+     상단은 고정 네비(약 70px) 높이를 확보해, 화면 맨 위에 스냅돼도
+     중앙 정렬된 콘텐츠가 네비 뒤로 가려지지 않게 한다 */
   .about,
   .sub-projects,
   .projects,
   .skills,
   .contact {
-    padding-top: clamp(50px, 6vh, 80px);
+    padding-top: clamp(90px, 10vh, 120px);
     padding-bottom: clamp(30px, 4vh, 60px);
   }
 
@@ -230,9 +232,7 @@ a {
     font-size: 20px;
     margin-bottom: 18px;
   }
-  .skill-group-title-web {
-    margin-top: 25px;
-  }
+
   .skill-tags {
     gap: 8px;
   }
@@ -864,6 +864,11 @@ a.about-info-value:hover {
 .projects-head {
   text-align: center;
   margin-bottom: 36px;
+}
+@media (min-width: 1280px) {
+  .projects-head {
+    padding-top: 100px;
+  }
 }
 
 .projects-label {
@@ -2235,4 +2240,8 @@ a.about-info-value:hover {
   .result-value {
     font-size: 22px;
   }
+}
+
+.skill-group-title-web {
+  margin-top: 25px;
 }
